@@ -290,36 +290,3 @@
 
 
 
-
-var form = document.getElementById('form')
-form.addEventListener('submit', function(e) {
-	e.preventDefault();
-	var fullname = document.getElementById("contact-name").value
-	var email = document.getElementById("contact-email").value
-	var subject = document.getElementById("contact-phone").value
-	var message = document.getElementById("contact-message").value
-
-
-	fetch( 'https://crevat.herokuapp.com/contact', {
-		method: 'POST',
-		body: JSON.stringify({
-			fullname: fullname,
-			email: email,
-			subject: subject,
-			message: message,
-		}), 
-		headers: {
-			"Content-Type": "application/json; charset=UTF-8"
-			}
-	},
-	)
-		.then( response => response.json() )
-		.then( response => {
-				console.log(response.data)
-		});
-
-
-		form.reset();
-
-
-})
