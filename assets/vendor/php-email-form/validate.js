@@ -1,8 +1,4 @@
-/**
-* PHP Email Form Validation - v3.2
-* URL: https://bootstrapmade.com/php-email-form/
-* Author: BootstrapMade.com
-*/
+
 (function () {
   "use strict";
 
@@ -57,7 +53,7 @@
     })
     .then(response => {
       if( response.ok ) {
-        return response.text()
+        return response
       } else {
         throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
       }
